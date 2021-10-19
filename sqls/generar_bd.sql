@@ -1,3 +1,6 @@
+
+----------- 18/10/2021 20:00 ------------
+
 CREATE TABLE `candidatos`  (
   `cedula` varchar(10) NOT NULL,
   `nombre` varchar(30) NOT NULL,
