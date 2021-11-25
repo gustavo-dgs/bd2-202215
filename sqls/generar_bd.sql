@@ -58,3 +58,11 @@ ALTER TABLE `se_postulan` ADD CONSTRAINT `fk_se_postulan_Candidatos_1` FOREIGN K
 ALTER TABLE `se_postulan` ADD CONSTRAINT `fk_se_postulan_Vacantes_1` FOREIGN KEY (`empresa`, `vacante`) REFERENCES `vacantes` (`empresa`, `cod_v`);
 ALTER TABLE `vacantes` ADD CONSTRAINT `fk_Vacantes_Empresas_1` FOREIGN KEY (`empresa`) REFERENCES `empresas` (`rif`);
 
+ALTER TABLE candidatos
+ADD CONSTRAINT chk_disponibilidad_de_viajar_c
+CHECK (`disponibilidad_de_viajar` IN ('S', 'N'));
+
+ALTER TABLE vacantes
+ADD CONSTRAINT chk_disponibilidad_de_viajar_v
+CHECK (`disponibilidad_de_viajar` IN ('S', 'N'));
+
