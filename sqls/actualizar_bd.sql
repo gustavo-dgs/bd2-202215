@@ -14,4 +14,7 @@ ALTER TABLE `bd2_202215_27506984`.`vacantes`
 ALTER TABLE `bd2_202215_27506984`.`vacantes` 
     MODIFY COLUMN `fecha_vencimiento` date NOT NULL AFTER `fecha_publicacion`;
 
-
+ALTER TABLE `bd2_202215_27506984`.`se_postulan` 
+    ADD COLUMN `fecha` date NULL AFTER `vacante`;
+ALTER TABLE `bd2_202215_27506984`.`se_postulan` 
+    MODIFY COLUMN `fecha` date NOT NULL AFTER `vacante`;
