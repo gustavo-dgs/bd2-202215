@@ -18,3 +18,9 @@ ALTER TABLE `bd2_202215_27506984`.`se_postulan`
     ADD COLUMN `fecha` date NULL AFTER `vacante`;
 ALTER TABLE `bd2_202215_27506984`.`se_postulan` 
     MODIFY COLUMN `fecha` date NOT NULL AFTER `vacante`;
+
+ALTER TABLE `bd2_202215_27506984`.`vacantes` 
+    MODIFY COLUMN `educacion_min` int NOT NULL AFTER `salario`;
+
+ALTER TABLE `bd2_202215_27506984`.`candidatos` 
+    MODIFY COLUMN `nivel_edu` int NOT NULL AFTER `institucion`;
