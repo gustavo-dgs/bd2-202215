@@ -3,7 +3,7 @@
 -- los candidatos postulados para el puesto. 
 
 CREATE TEMPORARY TABLE R1
-SELECT sp.candidato, COUNT(hc.habilidad) +
+SELECT sp.candidato, c.nombre, COUNT(hc.habilidad) +
     (CASE
         WHEN c.edad BETWEEN v.edad_min AND v.edad_max THEN 1
         ELSE 0
@@ -28,9 +28,9 @@ AND hc.habilidad IN (SELECT hv.habilidad
                         FROM habilidades_v hv
                         WHERE hv.empresa = sp.empresa
                         AND hv.vacante = sp.vacante)
-GROUP BY 1;
+GROUP BY 1,2;
 
-SELECT candidato
+SELECT candidato, nombre
 FROM R1
 WHERE puntaje = (SELECT MAX(puntaje) FROM R1);
 
