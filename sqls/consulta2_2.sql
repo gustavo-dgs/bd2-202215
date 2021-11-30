@@ -20,7 +20,7 @@ SELECT e.nombre, v.empresa, v.cod_v, COUNT(hc.habilidad) +
 FROM habilidades_c hc, vacantes v, candidatos c, empresas e
 WHERE c.cedula = hc.candidato
 AND e.rif = v.empresa
-AND c.cedula = 9951411 -- colocar cedula del candidato
+AND c.cedula = ? -- colocar cedula del candidato
 AND CONCAT(v.empresa, v.cod_v) IN (SELECT CONCAT(empresa, cod_v)
 																	   FROM vacantes
                                      WHERE NOW() BETWEEN fecha_publicacion AND fecha_vencimiento
