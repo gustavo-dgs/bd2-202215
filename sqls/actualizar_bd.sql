@@ -24,3 +24,16 @@ ALTER TABLE `bd2_202215_27506984`.`vacantes`
 
 ALTER TABLE `bd2_202215_27506984`.`candidatos` 
     MODIFY COLUMN `nivel_edu` int NOT NULL AFTER `institucion`;
+
+ALTER TABLE `bd2_202215_27506984`.`vacantes` 
+    ADD COLUMN `republicacion` char(1) NULL DEFAULT 'N' AFTER `candidato_seleccionado`;
+ALTER TABLE `bd2_202215_27506984`.`vacantes`
+    ADD CONSTRAINT `ck_republicacion` CHECK(`republicacion` IN ('S','N'));
+
+ALTER TABLE `bd2_202215_27506984`.`empresas` 
+    ADD COLUMN `internacional` char(1) NOT NULL DEFAULT 'N' AFTER `direccion`;
+ALTER TABLE `bd2_202215_27506984`.`empresas`
+    ADD CONSTRAINT `ck_internacional` CHECK(`internacional` IN ('S','N'));
+
+ALTER TABLE `bd2_202215_27506984`.`vacantes` 
+    ADD COLUMN `porcentaje_prom` float(255, 2) NOT NULL DEFAULT 0 AFTER `republicacion`;
