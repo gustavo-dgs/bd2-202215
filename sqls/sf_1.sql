@@ -15,7 +15,7 @@ BEGIN
 
     SELECT v.fecha_publicacion, v.fecha_vencimiento, v.candidato_seleccionado
     INTO fecha_publicacion, fecha_vencimiento, candidato_seleccionado
-    FROM vacantes
+    FROM vacantes v
     WHERE v.empresa = empresa
     AND v.cod_v = vacante;
 
