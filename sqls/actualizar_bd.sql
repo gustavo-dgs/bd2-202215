@@ -37,3 +37,8 @@ ALTER TABLE `bd2_202215_27506984`.`empresas`
 
 ALTER TABLE `bd2_202215_27506984`.`vacantes` 
     ADD COLUMN `porcentaje_prom` float(255, 2) NOT NULL DEFAULT 0 AFTER `republicacion`;
+
+ALTER TABLE `bd2_202215_27506984`.`vacantes` 
+    ADD COLUMN `pagada` char(1) NULL DEFAULT 'N' AFTER `porcentaje_prom`;
+ALTER TABLE `bd2_202215_27506984`.`vacantes`
+    ADD CONSTRAINT `ck_pagada` CHECK(`pagada` IN ('S','N'));
