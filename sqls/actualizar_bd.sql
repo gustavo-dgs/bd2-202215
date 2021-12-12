@@ -42,3 +42,9 @@ ALTER TABLE `bd2_202215_27506984`.`vacantes`
     ADD COLUMN `pagada` char(1) NULL DEFAULT 'N' AFTER `porcentaje_prom`;
 ALTER TABLE `bd2_202215_27506984`.`vacantes`
     ADD CONSTRAINT `ck_pagada` CHECK(`pagada` IN ('S','N'));
+
+ALTER TABLE `bd2_202215_27506984`.`candidatos` 
+    ADD COLUMN `codigo_validacion` varchar(32) NULL AFTER `disponibilidad_de_viajar`,
+    ADD COLUMN `validado` char(1) NOT NULL DEFAULT 'N' AFTER `codigo_validacion`;
+ALTER TABLE `bd2_202215_27506984`.`candidatos`
+    ADD CONSTRAINT `ck_validado` CHECK(`validado` IN ('S','N'));
