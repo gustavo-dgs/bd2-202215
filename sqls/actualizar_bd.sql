@@ -48,3 +48,8 @@ ALTER TABLE `bd2_202215_27506984`.`candidatos`
     ADD COLUMN `validado` char(1) NOT NULL DEFAULT 'N' AFTER `codigo_validacion`;
 ALTER TABLE `bd2_202215_27506984`.`candidatos`
     ADD CONSTRAINT `ck_validado` CHECK(`validado` IN ('S','N'));
+
+ALTER TABLE `bd2_202215_27506984`.`vacantes` 
+    ADD COLUMN `activa` char(1) NOT NULL DEFAULT 'N' AFTER `pagada`,
+    ADD CONSTRAINT `ck_activa` CHECK(`activa` IN ('S','N'));
+
