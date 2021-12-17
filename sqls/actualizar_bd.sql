@@ -53,3 +53,9 @@ ALTER TABLE `bd2_202215_27506984`.`vacantes`
     ADD COLUMN `activa` char(1) NOT NULL DEFAULT 'N' AFTER `pagada`,
     ADD CONSTRAINT `ck_activa` CHECK(`activa` IN ('S','N'));
 
+ALTER TABLE `bd2_202215_27506984`.`empresas` 
+    ADD COLUMN `eslogan` varchar(255) NOT NULL AFTER `internacional`;
+
+ALTER TABLE `bd2_202215_27506984`.`candidatos` 
+    MODIFY COLUMN `edad` int NOT NULL AFTER `nombre`;
+
