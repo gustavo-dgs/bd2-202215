@@ -6,7 +6,7 @@ CREATE TRIGGER tg_after_vacantes_update_postular_candidato
 	ON vacantes FOR EACH ROW
 BEGIN
 	
-	IF OLD.pagada = 'S' THEN
+	IF NEW.pagada = 'S' THEN
 	BEGIN
 	
 		-- variables
@@ -22,7 +22,7 @@ BEGIN
 								WHERE empresa = OLD.empresa
 								AND vacante = OLD.cod_v)
 			GROUP BY candidato
-			HAVING COUNT(hc.habilidad) > 6;
+			HAVING COUNT(habilidad) > 6;
 			
 		-- declare NOT FOUND handler
 		DECLARE CONTINUE HANDLER 
