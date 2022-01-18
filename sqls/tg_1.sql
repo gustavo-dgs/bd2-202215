@@ -1,7 +1,7 @@
 /*Disparador que impida que un candidato que no esté validado 
 pueda postularse a una candidatura.*/
 
-CREATE TRIGGER tg_before_se_postulan_insert
+CREATE TRIGGER tg_before_se_postulan_insert_validar_candidato
 	BEFORE INSERT
 	ON se_postulan FOR EACH ROW
 BEGIN
