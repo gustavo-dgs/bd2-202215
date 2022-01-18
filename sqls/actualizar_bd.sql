@@ -59,3 +59,6 @@ ALTER TABLE `bd2_202215_27506984`.`empresas`
 ALTER TABLE `bd2_202215_27506984`.`candidatos` 
     MODIFY COLUMN `edad` int NOT NULL AFTER `nombre`;
 
+ALTER TABLE `bd2_202215_27506984`.`vacantes` 
+    ADD COLUMN `fecha_pago` date NULL AFTER `activa`;
+
