@@ -62,3 +62,6 @@ ALTER TABLE `bd2_202215_27506984`.`candidatos`
 ALTER TABLE `bd2_202215_27506984`.`vacantes` 
     ADD COLUMN `fecha_pago` date NULL AFTER `activa`;
 
+ALTER TABLE `bd2_202215_27506984`.`candidatos` 
+    ADD COLUMN `fecha_registro` date NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `validado`;
+
